@@ -100,12 +100,6 @@ function SignIn() {
                             >
                               Password <span className="text-red-600">*</span>
                             </label>
-                            <Link
-                              to="/reset-password"
-                              className="text-sm font-medium text-blue-600 hover:underline"
-                            >
-                              Having trouble signing in?
-                            </Link>
                           </div>
                           <Field
                             id="password"
@@ -122,24 +116,6 @@ function SignIn() {
                         </div>
                       </div>
 
-                      {/* Keep me signed in */}
-                      <div className="flex flex-wrap -mx-3 mb-4">
-                        <div className="w-full px-3">
-                          <div className="flex justify-between">
-                            <label className="flex items-center">
-                              <Field
-                                type="checkbox"
-                                name="keepSignedIn"
-                                className="form-checkbox"
-                              />
-                              <span className="text-gray-600 ml-2">
-                                Keep me signed in
-                              </span>
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-
                       {/* Submit Button */}
                       <div className="flex flex-wrap -mx-3 mt-6">
                         <div className="w-full px-3">
@@ -147,7 +123,7 @@ function SignIn() {
                             type="submit"
                             className="btn text-white bg-blue-600 hover:bg-blue-700 w-full"
                           >
-                            Sign in
+                            Sign In
                           </button>
                         </div>
                       </div>
@@ -175,7 +151,7 @@ function SignIn() {
                     to="/signup"
                     className="text-blue-600 hover:underline transition duration-150 ease-in-out"
                   >
-                    Sign up
+                    Sign Up
                   </Link>
                 </div>
               </div>

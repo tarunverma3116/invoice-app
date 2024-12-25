@@ -4,6 +4,7 @@ import * as Yup from "yup";
 import Dropzone from "react-dropzone";
 import { Link, useNavigate } from "react-router-dom";
 import { getSuccessNotificationMessage } from "./NotificationMessage";
+import UploadSection from "./UploadSection";
 
 const CreateInvoice = () => {
   const navigate = useNavigate();
@@ -110,58 +111,7 @@ const CreateInvoice = () => {
         {/* Split Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Left Section: Upload Invoice */}
-          <div className="max-h-[100vh] flex flex-col justify-center items-center bg-gray-100 border-dashed border-2 border-gray-300 p-6 rounded-lg">
-            <p className="text-xl font-semibold">Upload Your Invoice</p>
-            <p className="text-gray-600">
-              To auto-populate fields and save time
-            </p>
-            <img
-              src={window.location.origin + "/img/file.png"} // Replace with the actual image path
-              alt="Invoice"
-              className="w-64 h-64 mb-4"
-            />
-            <Dropzone
-              onDrop={(acceptedFiles) =>
-                console.log("Dropped file:", acceptedFiles)
-              }
-              accept="image/*"
-              multiple={false}
-            >
-              {({ getRootProps, getInputProps }) => (
-                <div {...getRootProps()} className="cursor-pointer text-center">
-                  <input name="image-upload" {...getInputProps()} />
-                  <button
-                    htmlFor="image-upload"
-                    className="w-60 bg-white-500 text-[#64748B] py-3 rounded-lg border-2 border-[#64748B] flex items-center justify-center gap-2"
-                  >
-                    Upload File{" "}
-                    <span>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={1.5}
-                        stroke="currentColor"
-                        className="size-6"
-                        width={18}
-                        height={18}
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5"
-                        />
-                      </svg>
-                    </span>
-                  </button>
-                  <p className="text-gray-600 mt-3">
-                    <span className="text-blue-600">Click to upload</span> or
-                    drag and drop
-                  </p>
-                </div>
-              )}
-            </Dropzone>
-          </div>
+          <UploadSection/>
 
           {/* Right Section: Form */}
           <div className="invoice-form">
